@@ -100,30 +100,47 @@ Trên MagicOS, để MicroG không chạy ngầm gây hao pin nhưng vẫn kích
 ---
 
 ### Bước 3: Khắc phục lỗi bấm link không mở app Maps trên HONOR (Android 12+)
-Do cơ chế bảo mật của MagicOS trên Android 12+, các ứng dụng mod bị ẩn nút gán liên kết thủ công. Bạn chọn **1 trong 3 cách** sau tùy điều kiện:
+Do cơ chế bảo mật của MagicOS trên Android 12+, các ứng dụng mod bị ẩn nút gán liên kết thủ công. Bạn chọn **1 trong 3 cách** sau:
 
-#### 🟢 Cách 1: Sử dụng LinkSheet (Đơn giản nhất – Không cần máy tính)
+#### 🟢 Cách 1: Sử dụng LinkSheet (Đơn giản nhất – Không cần đụng đến Chế độ nhà phát triển)
 * Tải ứng dụng mã nguồn mở **[LinkSheet](https://github.com/LinkSheet/LinkSheet/releases)** (hoặc trên F-Droid / Play Store).
 * Mở LinkSheet và chọn nó làm **Trình duyệt / Trình xử lý liên kết mặc định**.
 * Từ đây, mỗi khi bạn bấm vào link chia sẻ vị trí Maps (từ Zalo, Messenger, SMS...), LinkSheet sẽ tự động chuyển thẳng vào Google Maps Patched thay vì bị đẩy ra trình duyệt web.
 
-#### 🟡 Cách 2: Sử dụng Shizuku + aShell (Không cần máy tính – Kích hoạt vĩnh viễn)
-Nếu bạn không muốn cài app chuyển hướng như LinkSheet mà muốn hệ thống tự mở thẳng như app gốc:
-1. Cài đặt **[Shizuku](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api)** (từ Google Play) và ứng dụng terminal **[aShell](https://github.com/DP-Hridayan/aShell/releases)**.
-2. Mở Shizuku $\rightarrow$ Ghép nối qua **Gỡ lỗi qua Wi-Fi (Wireless debugging)** trong *Tùy chọn nhà phát triển* của máy Honor $\rightarrow$ Bấm **Khởi động (Start)**.
-3. Mở **aShell**, cấp quyền Shizuku, sau đó dán 2 dòng lệnh sau và bấm chạy:
-   ```bash
-   pm set-app-links --package com.google.android.apps.maps 2 all
-   pm set-app-links-user-selection --user 0 --package com.google.android.apps.maps true all
-   ```
-4. Xong! Hệ thống sẽ duyệt vĩnh viễn tất cả domain của Maps. Bạn có thể xóa aShell đi nếu muốn.
+---
 
-#### 🔵 Cách 3: Dành cho ai có sẵn máy tính kết nối ADB (Thực hiện trong 5 giây)
-* Cắm cáp điện thoại vào máy tính, mở terminal / CMD và chạy câu lệnh:
-  ```bash
-  adb shell pm set-app-links --package com.google.android.apps.maps 2 all
-  adb shell pm set-app-links-user-selection --user 0 --package com.google.android.apps.maps true all
-  ```
+#### 🟡 Cách 2: Sử dụng Shizuku + aShell (Không cần máy tính – Kích hoạt vĩnh viễn)
+1. Cài đặt **[Shizuku](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api)** (từ Google Play) và ứng dụng terminal **[aShell](https://github.com/DP-Hridayan/aShell/releases)**.
+2. **Bật Chế độ nhà phát triển trên HONOR**:
+   * Vào **Cài đặt** $\rightarrow$ **Về điện thoại**.
+   * Chạm liên tục **7 lần** vào dòng **Số hiệu bản dựng** (*Build number*) cho đến khi máy báo đã là nhà phát triển.
+   * Quay lại **Cài đặt** $\rightarrow$ **Hệ thống & cập nhật** $\rightarrow$ **Tùy chọn nhà phát triển**.
+   * Bật mục **Gỡ lỗi qua Wi-Fi** (*Wireless debugging*).
+3. **Ghép nối Shizuku**:
+   * Mở app Shizuku $\rightarrow$ Chọn **Ghép nối** (*Pairing*) $\rightarrow$ Nhập mã 6 số từ thông báo hệ thống $\rightarrow$ Bấm **Khởi động** (*Start*).
+4. **Chạy lệnh duyệt link**:
+   * Mở app **aShell**, cấp quyền Shizuku, dán 2 dòng lệnh sau và bấm Chạy:
+     ```bash
+     pm set-app-links --package com.google.android.apps.maps 2 all
+     pm set-app-links-user-selection --user 0 --package com.google.android.apps.maps true all
+     ```
+5. ⚠️ **BƯỚC QUAN TRỌNG ĐỂ DÙNG APP NGÂN HÀNG**:
+   * Sau khi chạy lệnh xong, hãy vào lại **Cài đặt** $\rightarrow$ **Hệ thống & cập nhật** $\rightarrow$ **Tùy chọn nhà phát triển** $\rightarrow$ **GẠT TẮT CÔNG TẮC TRÊN CÙNG**.
+   * > 🔒 *Các ứng dụng ngân hàng tại Việt Nam (Techcombank, Vietcombank, MB, VPBank...) sẽ chặn không cho đăng nhập nếu phát hiện máy đang bật Chế độ nhà phát triển. Việc bạn tắt đi hoàn toàn **KHÔNG LÀM MẤT** thiết lập mở link của Google Maps (vì lệnh đã được lưu vĩnh viễn vào hệ điều hành).*
+
+---
+
+#### 🔵 Cách 3: Dành cho ai có máy tính kết nối ADB (Thực hiện trong 5 giây)
+1. **Bật Gỡ lỗi USB trên HONOR**:
+   * Vào **Cài đặt** $\rightarrow$ **Về điện thoại** $\rightarrow$ Chạm 7 lần vào **Số hiệu bản dựng**.
+   * Vào **Cài đặt** $\rightarrow$ **Hệ thống & cập nhật** $\rightarrow$ **Tùy chọn nhà phát triển** $\rightarrow$ Bật **Gỡ lỗi USB**.
+2. Cắm cáp kết nối điện thoại với máy tính, mở terminal / CMD và chạy câu lệnh:
+   ```bash
+   adb shell pm set-app-links --package com.google.android.apps.maps 2 all
+   adb shell pm set-app-links-user-selection --user 0 --package com.google.android.apps.maps true all
+   ```
+3. ⚠️ **Tắt Tùy chọn nhà phát triển**:
+   * Rút cáp, vào lại **Tùy chọn nhà phát triển** $\rightarrow$ **TẮT ĐI** để các ứng dụng ngân hàng hoạt động bình thường, không bị cảnh báo bảo mật.
 
 ---
 
