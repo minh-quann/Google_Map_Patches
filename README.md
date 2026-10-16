@@ -99,19 +99,31 @@ Trên MagicOS, để MicroG không chạy ngầm gây hao pin nhưng vẫn kích
 
 ---
 
-### Bước 3: Khắc phục lỗi bấm link không mở app Maps trên HONOR
-Do cơ chế bảo mật của MagicOS trên Android 12+, các ứng dụng mod bị ẩn nút gán liên kết thủ công. Bạn chọn 1 trong 2 cách sau:
+### Bước 3: Khắc phục lỗi bấm link không mở app Maps trên HONOR (Android 12+)
+Do cơ chế bảo mật của MagicOS trên Android 12+, các ứng dụng mod bị ẩn nút gán liên kết thủ công. Bạn chọn **1 trong 3 cách** sau tùy điều kiện:
 
-* **Cách 1: Không cần máy tính (Khuyên dùng)**
-  * Tải và cài đặt ứng dụng mã nguồn mở **[LinkSheet](https://github.com/1f20/LinkSheet/releases)** (hoặc trên F-Droid).
-  * Đặt LinkSheet làm trình xử lý liên kết mặc định. Từ đây, bất cứ khi nào bạn bấm vào một liên kết Google Maps từ Zalo, Messenger, SMS... LinkSheet sẽ chuyển thẳng vào Google Maps Patched mà không bị đẩy ra trình duyệt web.
+#### 🟢 Cách 1: Sử dụng LinkSheet (Đơn giản nhất – Không cần máy tính)
+* Tải ứng dụng mã nguồn mở **[LinkSheet](https://github.com/LinkSheet/LinkSheet/releases)** (hoặc trên F-Droid / Play Store).
+* Mở LinkSheet và chọn nó làm **Trình duyệt / Trình xử lý liên kết mặc định**.
+* Từ đây, mỗi khi bạn bấm vào link chia sẻ vị trí Maps (từ Zalo, Messenger, SMS...), LinkSheet sẽ tự động chuyển thẳng vào Google Maps Patched thay vì bị đẩy ra trình duyệt web.
 
-* **Cách 2: Nếu có máy tính kết nối ADB (Thực hiện trong 5 giây)**
-  * Chạy câu lệnh sau qua terminal / cmd:
-    ```bash
-    adb shell pm set-app-links --package com.google.android.apps.maps 2 all
-    adb shell pm set-app-links-user-selection --user 0 --package com.google.android.apps.maps true all
-    ```
+#### 🟡 Cách 2: Sử dụng Shizuku + aShell (Không cần máy tính – Kích hoạt vĩnh viễn)
+Nếu bạn không muốn cài app chuyển hướng như LinkSheet mà muốn hệ thống tự mở thẳng như app gốc:
+1. Cài đặt **[Shizuku](https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api)** (từ Google Play) và ứng dụng terminal **[aShell](https://github.com/DP-Hridayan/aShell/releases)**.
+2. Mở Shizuku $\rightarrow$ Ghép nối qua **Gỡ lỗi qua Wi-Fi (Wireless debugging)** trong *Tùy chọn nhà phát triển* của máy Honor $\rightarrow$ Bấm **Khởi động (Start)**.
+3. Mở **aShell**, cấp quyền Shizuku, sau đó dán 2 dòng lệnh sau và bấm chạy:
+   ```bash
+   pm set-app-links --package com.google.android.apps.maps 2 all
+   pm set-app-links-user-selection --user 0 --package com.google.android.apps.maps true all
+   ```
+4. Xong! Hệ thống sẽ duyệt vĩnh viễn tất cả domain của Maps. Bạn có thể xóa aShell đi nếu muốn.
+
+#### 🔵 Cách 3: Dành cho ai có sẵn máy tính kết nối ADB (Thực hiện trong 5 giây)
+* Cắm cáp điện thoại vào máy tính, mở terminal / CMD và chạy câu lệnh:
+  ```bash
+  adb shell pm set-app-links --package com.google.android.apps.maps 2 all
+  adb shell pm set-app-links-user-selection --user 0 --package com.google.android.apps.maps true all
+  ```
 
 ---
 
