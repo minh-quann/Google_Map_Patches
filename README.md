@@ -1,6 +1,6 @@
 # 🗺️ Google Maps Patched (Bearinmind) & MicroG-RE
 
-Bản đóng gói Google Maps Android tối ưu hóa với các bản vá cao cấp từ **Bearinmind**, hỗ trợ mở khóa **tần số quét 120Hz siêu mượt**, đăng nhập tài khoản Google thông qua **MicroG-RE / ReVanced GmsCore**, khôi phục **Dòng thời gian (Timeline)**, chặn quảng cáo, tích hợp cảnh báo giao thông & bắn tốc độ kiểu **Waze**.
+Bản đóng gói Google Maps Android tối ưu hóa với các bản vá cao cấp từ **Bearinmind**, mở khóa **tần số quét 120Hz siêu mượt**, đặc biệt **khôi phục hoàn toàn Dòng thời gian (Timeline)** vốn đang bị lỗi/mất trên hàng loạt máy, hỗ trợ đăng nhập tài khoản Google qua **MicroG-RE / ReVanced GmsCore**, chặn quảng cáo, tích hợp cảnh báo giao thông & bắn tốc độ kiểu **Waze**.
 
 ---
 
@@ -12,16 +12,28 @@ Bản đóng gói Google Maps Android tối ưu hóa với các bản vá cao c�
 
 | Ứng dụng | Phiên bản | Dung lượng | Link tải trực tiếp | Ghi chú |
 | :--- | :--- | :--- | :--- | :--- |
-| **Google Maps Patched** | `v26.36.04.973607363` | ~125 MB | [⬇️ Tải Google Maps APK](https://github.com/minh-quann/Google_Map_Patches/releases/download/v26.36.04/Google_Maps_v26.36.04_Patched.apk) | Đã mở khóa 120Hz, Timeline, Waze alert, Ad-free |
+| **Google Maps Patched** | `v26.36.04.973607363` | ~125 MB | [⬇️ Tải Google Maps APK](https://github.com/minh-quann/Google_Map_Patches/releases/download/v26.36.04/Google_Maps_v26.36.04_Patched.apk) | Mở khóa 120Hz, Timeline hoạt động, Waze alert, Ad-free |
 | **MicroG-RE** (GmsCore) | `v7.2.2-dev.2` | ~43 MB | [⬇️ Tải MicroG-RE APK](https://github.com/minh-quann/Google_Map_Patches/releases/download/v26.36.04/MicroG-RE-7.2.2.apk) | *Chỉ tải nếu máy chưa có MicroG/GmsCore* |
 
 👉 **Xem danh sách tải đầy đủ tại mục [Releases](https://github.com/minh-quann/Google_Map_Patches/releases)**
 
 ---
 
-## ✨ Các tính năng nổi bật
+## ✨ Các tính năng nổi bật (Highlights)
 
-### 1. 🚀 Mở khóa tần số quét màn hình 120Hz (120Hz Refresh Rate)
+### 1. 📍 Khôi phục hoàn toàn Dòng thời gian (Timeline) — Cứu cánh cho người dùng Maps!
+> [!IMPORTANT]
+> **Vấn đề nhức nhối hiện nay**: Google gần đây đã đổi chính sách, **khai tử Timeline trên nền web** và chuyển sang lưu trữ cục bộ liên kết chặt với Google Play Services. Hậu quả là hàng loạt máy (đặc biệt là máy xách tay/nội địa, máy dùng app mod, máy không có chứng nhận GMS chuẩn) bị **mất sạch lịch sử vị trí**, liên tục báo lỗi *"Dòng thời gian không khả dụng"* hoặc không thể tải dữ liệu.
+
+* **Hoạt động trơn tru 100%**: Bản vá này can thiệp trực tiếp vào hệ thống định vị để khôi phục hoàn toàn tính năng Timeline. Mọi lộ trình di chuyển, các địa điểm ghé thăm, thời gian dừng chân theo từng ngày đều được **tự động ghi nhận chính xác và hiển thị mượt mà**.
+* **Bảo mật & Lưu trữ cục bộ (On-device)**: Dữ liệu hành trình được lưu an toàn ngay trên bộ nhớ điện thoại của bạn, đảm bảo tính riêng tư tuyệt đối và không lo bị Google quét hay khóa dịch vụ.
+* **Xuất file GPX & Sao lưu tiện lợi**:
+  * Hỗ trợ xuất dữ liệu chuyến đi ra file định dạng **`.gpx`** để xem lại cung đường phượt hoặc nhập vào các ứng dụng thể thao, bản đồ chuyên dụng khác.
+  * Hỗ trợ nhập và xuất dữ liệu lịch sử từ Google Takeout.
+
+---
+
+### 2. 🚀 Mở khóa tần số quét màn hình 120Hz (120Hz Refresh Rate)
 * **Khắc phục điểm yếu cố hữu của Google Maps gốc**: Google luôn giới hạn cứng Maps ở mức **60Hz**, khiến cảm giác vuốt cuộn bản đồ, xoay góc nhìn trên các dòng máy màn hình 90Hz / 120Hz / 144Hz bị khựng giật khó chịu.
 * **Mượt mà tuyệt đối**: Bản vá gỡ bỏ hoàn toàn giới hạn 60Hz, cho phép toàn bộ giao diện và thao tác lướt bản đồ chạy ở tần số quét tối đa **120Hz**, mang lại trải nghiệm vuốt chạm cực kỳ mượt mà.
 * **Cách kích hoạt**:
@@ -29,18 +41,10 @@ Bản đóng gói Google Maps Android tối ưu hóa với các bản vá cao c�
 
 ---
 
-### 2. 🛡️ Đăng nhập tài khoản qua MicroG-RE / ReVanced GmsCore
+### 3. 🛡️ Đăng nhập tài khoản qua MicroG-RE / ReVanced GmsCore
 * Đăng nhập tài khoản Google bình thường trên ứng dụng đã mod mà không bị Google Play Services chặn chữ ký số.
 * Đồng bộ danh sách địa điểm đã lưu (*Yêu thích, Muốn đến, Gắn sao...*).
 * Dùng chung tài nguyên với **ReVanced GmsCore / MicroG-RE** (`app.revanced.android.gms`).
-
----
-
-### 3. 📍 Dòng thời gian (Timeline) hoạt động mượt mà
-* Khôi phục hoàn toàn tính năng Timeline sau chính sách khai tử đồng bộ web gần đây của Google.
-* Tự động ghi nhận lộ trình và các điểm dừng chân theo từng ngày.
-* Lưu trữ an toàn, bảo mật trực tiếp trên thiết bị (On-device storage).
-* Hỗ trợ xuất dữ liệu hành trình ra định dạng file `.gpx` hoặc nhập dữ liệu từ Google Takeout.
 
 ---
 
