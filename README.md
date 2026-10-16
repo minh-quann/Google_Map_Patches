@@ -34,7 +34,7 @@ Bản đóng gói Google Maps Android tối ưu hóa với các bản vá cao c�
 ---
 
 ### 2. 🚀 Mở khóa tần số quét màn hình 120Hz (120Hz Refresh Rate)
-* **Khắc phục điểm yếu cố hữu của Google Maps gốc**: Google luôn giới hạn cứng Maps ở mức **60Hz**, khiến cảm giác vuốt cuộn bản đồ, xoay góc nhìn trên các dòng máy màn hình 90Hz / 120Hz / 144Hz bị khựng giật khó chịu.
+* **Khắc phục điểm yếu cố hữu của Google Maps gốc**: Google luôn giới hạn cứng Maps ở mức **60Hz**, khiến cảm giác vuốt cuộn bản đồ, xoay góc nhìn trên màn hình tần số quét cao bị khựng giật khó chịu.
 * **Mượt mà tuyệt đối**: Bản vá gỡ bỏ hoàn toàn giới hạn 60Hz, cho phép toàn bộ giao diện và thao tác lướt bản đồ chạy ở tần số quét tối đa **120Hz**, mang lại trải nghiệm vuốt chạm cực kỳ mượt mà.
 * **Cách kích hoạt**:
   > Vào **Google Maps** $\rightarrow$ Chạm vào **Avatar tài khoản** ở góc trên bên phải $\rightarrow$ Chọn **Cài đặt (Settings)** $\rightarrow$ Chọn mục **Tùy biến (Customization)** $\rightarrow$ Gạt bật công tắc **120 refresh rate**.
@@ -64,7 +64,7 @@ Bản đóng gói Google Maps Android tối ưu hóa với các bản vá cao c�
 ---
 
 ### 6. 🔋 Chế độ siêu tiết kiệm pin Pixel (Power Saving Mode)
-* Mang tính năng độc quyền của Google Pixel lên mọi dòng máy: Khi đang dẫn đường, bấm nút nguồn để chuyển sang màn hình đen AMOLED tối giản, chỉ hiển thị mũi tên rẽ tiếp theo. Giúp máy siêu mát và tiết kiệm pin tối đa khi đi đường dài.
+* Mang tính năng độc quyền của Google Pixel lên máy Honor: Khi đang dẫn đường, bấm nút nguồn để chuyển sang màn hình đen AMOLED tối giản, chỉ hiển thị mũi tên rẽ tiếp theo. Giúp máy siêu mát và tiết kiệm pin tối đa khi đi đường dài.
 
 ---
 
@@ -74,33 +74,44 @@ Bản đóng gói Google Maps Android tối ưu hóa với các bản vá cao c�
 
 ---
 
-## 🚀 Hướng dẫn cài đặt & Thiết lập pin tối ưu
+## 📱 Hướng dẫn cài đặt & Thiết lập chuẩn cho máy HONOR (MagicOS)
 
 ### Bước 1: Cài đặt ứng dụng
 1. Nếu máy **chưa có** MicroG / GmsCore: Cài file **`MicroG-RE-7.2.2.apk`** trước.
 2. Cài file **`Google_Maps_v26.36.04_Patched.apk`**.
 3. Mở Google Maps $\rightarrow$ Bấm vào Avatar góc trên bên phải $\rightarrow$ **Đăng nhập** tài khoản Google.
-4. Cấp quyền:
-   * **Vị trí (Location)**: Khuyên dùng chọn **Luôn cho phép** (*Allow all the time*) để tính năng Timeline ghi lại hành trình ngầm chính xác nhất.
-   * **Thông báo (Notifications)**: Cho phép để nhận âm thanh dẫn đường và cảnh báo camera.
+4. Cấp quyền hệ thống:
+   * **Vị trí**: Chọn **Luôn cho phép** để tính năng Timeline ghi nhận hành trình ngầm chính xác nhất.
+   * **Thông báo**: Cho phép để nhận âm thanh dẫn đường và cảnh báo camera.
 
 ---
 
-### Bước 2: Thiết lập MicroG tối ưu pin (Rất quan trọng)
-Để MicroG không chạy ngầm gây hao pin máy nhưng vẫn luôn sẵn sàng hoạt động ngay khi bạn mở Google Maps:
+### Bước 2: Thiết lập pin cho MicroG trên HONOR (Rất quan trọng)
+Trên MagicOS, để MicroG không chạy ngầm gây hao pin nhưng vẫn kích hoạt tức thì khi mở Google Maps:
 
-* **Đối với các máy Honor / Huawei (MagicOS / EMUI)**:
-  1. Vào **Cài đặt (Settings)** $\rightarrow$ **Pin (Battery)** $\rightarrow$ **Khởi chạy ứng dụng (App launch)**.
-  2. Tìm ứng dụng **MicroG-RE** (hoặc **microG Services**).
-  3. Chuyển từ *Tự động quản lý* sang **Quản lý thủ công (Manage manually)**.
-  4. Tại đây:
-     * ❌ **Tắt**: Tự khởi chạy (*Auto-launch*)
-     * ❌ **Tắt**: Chạy ngầm (*Run in background*)
-     * ✅ **BẬT DUY NHẤT**: **Khởi chạy thứ cấp (Secondary launch)**
-  > 💡 *Thiết lập này giúp MicroG hoàn toàn không tốn 1% pin nào lúc bình thường, nhưng hễ bạn mở Google Maps thì hệ thống sẽ tự động kích hoạt MicroG lên để phục vụ đăng nhập và đồng bộ.*
+1. Vào **Cài đặt** $\rightarrow$ **Pin** $\rightarrow$ **Khởi chạy ứng dụng**.
+2. Tìm ứng dụng **MicroG-RE** (hoặc **microG Services**).
+3. Chuyển từ chế độ *Tự động quản lý* sang **Quản lý thủ công**:
+   * ❌ **Tắt**: Tự khởi chạy (*Auto-launch*)
+   * ❌ **Tắt**: Chạy ngầm (*Run in background*)
+   * ✅ **BẬT DUY NHẤT**: **Khởi chạy thứ cấp (Secondary launch)**
+> 💡 *Với thiết lập này, MicroG sẽ ngủ sâu hoàn toàn khi không dùng đến (tiết kiệm 100% pin), nhưng hễ bạn mở Google Maps lên là MagicOS sẽ tự động gọi MicroG dậy để đồng bộ dữ liệu.*
 
-* **Đối với các dòng máy khác (Xiaomi, Oppo, Samsung...)**:
-  * Tương tự, bạn chỉ cần cho phép quyền **Khởi chạy liên kết / Khởi chạy thứ cấp (Associated launch / Start by other apps)** và không cần cấp quyền chạy ngầm liên tục.
+---
+
+### Bước 3: Khắc phục lỗi bấm link không mở app Maps trên HONOR
+Do cơ chế bảo mật của MagicOS trên Android 12+, các ứng dụng mod bị ẩn nút gán liên kết thủ công. Bạn chọn 1 trong 2 cách sau:
+
+* **Cách 1: Không cần máy tính (Khuyên dùng)**
+  * Tải và cài đặt ứng dụng mã nguồn mở **[LinkSheet](https://github.com/1f20/LinkSheet/releases)** (hoặc trên F-Droid).
+  * Đặt LinkSheet làm trình xử lý liên kết mặc định. Từ đây, bất cứ khi nào bạn bấm vào một liên kết Google Maps từ Zalo, Messenger, SMS... LinkSheet sẽ chuyển thẳng vào Google Maps Patched mà không bị đẩy ra trình duyệt web.
+
+* **Cách 2: Nếu có máy tính kết nối ADB (Thực hiện trong 5 giây)**
+  * Chạy câu lệnh sau qua terminal / cmd:
+    ```bash
+    adb shell pm set-app-links --package com.google.android.apps.maps 2 all
+    adb shell pm set-app-links-user-selection --user 0 --package com.google.android.apps.maps true all
+    ```
 
 ---
 
